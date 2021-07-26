@@ -5,12 +5,12 @@
 [![cdn version](https://data.jsdelivr.com/v1/package/npm/admin-lte/badge)](https://www.jsdelivr.com/package/npm/admin-lte)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-**AdminLTE** is a fully responsive administration template. Based on **[Bootstrap 4.6](https://getbootstrap.com/)** framework and also the JS/jQuery plugin.
-Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops.
+**AdminLTE** é um modelo de administração totalmente responsivo. Baseado em **[Bootstrap 4.6](https://getbootstrap.com/)** framework e também o plugin JS / jQuery.
+Altamente personalizável e fácil de usar. Compatível com várias resoluções de tela, de pequenos dispositivos móveis a grandes desktops.
 
-**Preview on [AdminLTE.io](https://adminlte.io/themes/v3)**
+**Pré-visualizar em [AdminLTE.io](https://adminlte.io/themes/v3)**
 
-# agora_adminlte
+# [AdminLTE - PHP OO - MVC - FRAMEWORK - MJAILTON - MÉTODO ÁGORA ](https://mjailton.com.br)
 Adaptando template AdminLTE ao mini framework desenvolvido no curso MJailton - Método Ágora.
 - PHP
 - POO
