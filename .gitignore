@@ -6,7 +6,7 @@
 .lock
 
 #Vendor
-vendor/almasaeed2010
+vendor/
 
 # Archives
 *.zip
