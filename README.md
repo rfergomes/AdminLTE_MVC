@@ -5,7 +5,7 @@
 [![cdn version](https://data.jsdelivr.com/v1/package/npm/admin-lte/badge)](https://www.jsdelivr.com/package/npm/admin-lte)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-**AdminLTE** é um modelo de administração totalmente responsivo. Baseado em **[Bootstrap 4.6](https://getbootstrap.com/)** framework e também o plugin JS / jQuery.
+**AdminLTE** é um modelo de administração totalmente responsivo. Baseado no framework **[Bootstrap 4.6](https://getbootstrap.com/)** e também no plugin JS/jQuery.
 Altamente personalizável e fácil de usar. Compatível com várias resoluções de tela, de pequenos dispositivos móveis a grandes desktops.
 
 **Pré-visualizar em [AdminLTE.io](https://adminlte.io/themes/v3)**
