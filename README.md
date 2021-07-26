@@ -22,5 +22,6 @@ Altamente personalizável e fácil de usar. Compatível com várias resoluções
 Adaptando template AdminLTE ao mini framework desenvolvido no curso MJailton - Método Ágora.
 
 
-#  A d m i n L T E _ P H P _ M V C _ F R A M E W O R K 
-[(https://repository-images.githubusercontent.com/389662401/94241d10-f37b-4411-90f6-dbafdc66eab2)]
+#  A d m i n L T E _ P H P _ M V C _ F R A M E W O R K
+ 
+![Imagem](https://repository-images.githubusercontent.com/389662401/94241d10-f37b-4411-90f6-dbafdc66eab2)
