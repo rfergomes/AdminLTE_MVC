@@ -2,6 +2,12 @@
 *.DS_Store
 *.log
 
+#Composer
+.lock
+
+#Vendor
+vendor/almasaeed2010
+
 # Archives
 *.zip
 
