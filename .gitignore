@@ -61,7 +61,6 @@ bower_components/
 !/plugins/**/license
 !/plugins/**/COPYING
 
-
 # Docs
 /docs/_site/
 /docs/vendor/
