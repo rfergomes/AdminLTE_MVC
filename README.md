@@ -13,10 +13,11 @@ Altamente personalizável e fácil de usar. Compatível com várias resoluções
 
 # [Mjailton - Método Ágora](https://mjailton.com.br)
 
-[![PHP](https://img.shields.io/badge/php-%5E7.1.3-blue)](https://www.php.net/)
+[![PHP](https://img.shields.io/badge/php-%5E7.1.3-blue?logo=php)](https://www.php.net/)
+[![Padrão](https://img.shields.io/badge/Mjailton-MVC-blue?logo=mvc)](https://mjailton.com.br/)
 [![Composer](https://img.shields.io/badge/Composer-2.1.5-yellowgreen?logo=composer)](https://getcomposer.org/)
-[![Composer](https://img.shields.io/badge/MJailton-M%C3%A9todo%20%C3%81gora-blue)](https://mjailton.com.br/)
-[![Composer](https://img.shields.io/badge/MJailton-Mini%20Framework-blue)](https://mjailton.com.br/)
+[![Ágora](https://img.shields.io/badge/MJailton-M%C3%A9todo%20%C3%81gora-blue)](https://mjailton.com.br/)
+[![Framework](https://img.shields.io/badge/MJailton-Mini%20Framework-blue)](https://mjailton.com.br/)
 
 Adaptando template AdminLTE ao mini framework desenvolvido no curso MJailton - Método Ágora.
 
