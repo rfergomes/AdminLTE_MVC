@@ -1,0 +1,22 @@
+{
+    "name": "adminlte/adminlte3-mvc-framework",
+    "authors": [
+        {
+            "name": "Rodrigo Fernando Gomes Lima",
+            "email": "rfergomes@gmail.com",
+            "homepage": "https://www.lglinformatica.com.br",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"}
+    },
+
+    "require": {
+        "almasaeed2010/adminlte": "~3.1",
+        "phpmailer/phpmailer": "^6.5"
+    }
+}
+
