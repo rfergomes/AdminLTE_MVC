@@ -10,7 +10,9 @@ Altamente personalizável e fácil de usar. Compatível com várias resoluções
 
 **Pré-visualizar em [AdminLTE.io](https://adminlte.io/themes/v3)**
 
-# [AdminLTE - PHP OO - MVC - FRAMEWORK - MJAILTON - MÉTODO ÁGORA ](https://mjailton.com.br)
+# [Mjailton - Método Ágora](https://mjailton.com.br)
+[![PHP](https://img.shields.io/badge/PHP-%3E%3D7.0-brightgreen)](https://www.php.net/)
+[![Composer](https://img.shields.io/badge/Composer-2.1.5-yellowgreen)](https://getcomposer.org/)
 Adaptando template AdminLTE ao mini framework desenvolvido no curso MJailton - Método Ágora.
 - PHP
 - POO
