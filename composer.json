@@ -17,6 +17,11 @@
             "app\\": "app/"
         },
         "files": [
+			"app/core/Core.php",
+			"app/helper/helper.php",
+			"app/helper/datahora.php",
+			"app/helper/numero.php",
+			"app/helper/rede.php",
             "Config/config.php"
         ]
     },
@@ -26,4 +31,3 @@
         "phpmailer/phpmailer": "^6.5"
     }
 }
-
