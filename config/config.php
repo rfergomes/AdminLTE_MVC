@@ -16,7 +16,7 @@ if (substr($_SERVER['DOCUMENT_ROOT'], -1) == '/') {
     define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$subpasta}");
 }
 
-#Define tipo de Acesso    
+#Define local de hospedagem   
 define('HOSPEDAGEM', $_SERVER['HTTP_HOST'] == 'localhost' ? "local" : "remoto");
 
 if (HOSPEDAGEM == "local") {
@@ -41,7 +41,6 @@ define('NAMESPACE_CONTROLLER', 'app\\controllers\\');
 define('TIMEZONE', "America/Sao_paulo");
 define('CAMINHO', realpath('./'));
 define("TITULO_SITE", "AdminLTE | ");
-
 define("SESSION_LOGIN", "usuario_logado");
 
 $config_upload["verifica_extensao"] = false;
