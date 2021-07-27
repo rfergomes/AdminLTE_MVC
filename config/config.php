@@ -41,13 +41,13 @@ if (HOSPEDAGEM == "Local") {
 
 #E-MAIL CONFIG
 define("CONF_MAIL", [
-    "HOST" => "smtp.sendgrid.net",
+    "HOST" => "quimicosunificados.ddns.net",//"smtp-auth.no-ip.com",
     "PORTA" => "587",
-    "USUARIO" => "apikey",
-    "SENHA" => "",
+    "USUARIO" => "admin@quimicosunificados.ddns.net",
+    "SENHA" => "Mudar@123",
     "MODO" => "tls",
-    "REMETENTE" => "Reinaldo",
-    "EMAIL" => "reinaldorti@gmail.com"
+    "REMETENTE" => "Químicos Unificados",
+    "EMAIL" => "quimicos.backup@gmail.com"
 ]);
 
 define('CONTROLLER_PADRAO', 'home');
