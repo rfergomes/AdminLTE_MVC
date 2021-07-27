@@ -21,7 +21,7 @@ class Core{
     }
     
     public function verificaUri(){
-        $url =explode("index.php", $_SERVER["SCRIPT_NAME"]);
+        $url =explode("index.php", $_SERVER["PHP_SELF"]);
         $url = end($url);
         
         if($url!=""){

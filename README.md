@@ -11,7 +11,7 @@ Altamente personalizável e fácil de usar. Compatível com várias resoluções
 **Pré-visualizar em [AdminLTE.io](https://adminlte.io/themes/v3)**
 
 
-# [Método Ágora](https://mjailton.com.br)
+## [Método Ágora](https://mjailton.com.br)
 
 [![PHP](https://img.shields.io/badge/php-%5E7.1.3-blue?logo=php)](https://www.php.net/)
 [![Composer](https://img.shields.io/badge/Composer-2.1.5-yellowgreen?logo=composer)](https://getcomposer.org/)
@@ -21,7 +21,7 @@ Altamente personalizável e fácil de usar. Compatível com várias resoluções
 
 Adaptando template AdminLTE ao mini framework desenvolvido no curso MJailton - Método Ágora.
 
-## Instalação
+### Instalação
 Você pode clonar este repositório ou baixar o .zip
 
 Ao descompactar, é necessário rodar o **[composer](https://getcomposer.org/)** pra instalar as dependências e gerar o *autoload*.
@@ -32,9 +32,10 @@ Vá até a pasta do projeto, pelo *prompt/terminal* e execute:
 composer install
 ```
 ### HTTPS/SSL
-Você pode desabilitar o redirecionamento *HTTPS* comentando as seguintes linha no arquivo .htaccess:
+O redirecionamento *http* para *https* está habilitado por default.
+Você pode desabilitar o redirecionamento *https* comentando as seguintes linhas do arquivo .htaccess:
 
-```r
+```bash
 # Forçar HTTPS/SSL
 #RewriteCond %{HTTPS} off
 #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
