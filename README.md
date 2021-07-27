@@ -24,7 +24,7 @@ Adaptando template AdminLTE ao mini framework desenvolvido no curso MJailton - M
 ## Instalação
 Você pode clonar este repositório OU baixar o .zip
 
-Ao descompactar, é necessário rodar o [composer](https://getcomposer.org/) pra instalar as dependências e gerar o *autoload*.
+Ao descompactar, é necessário rodar o **[composer]**(https://getcomposer.org/) pra instalar as dependências e gerar o *autoload*.
 
 Vá até a pasta do projeto, pelo *prompt/terminal* e execute:
 ```bash
