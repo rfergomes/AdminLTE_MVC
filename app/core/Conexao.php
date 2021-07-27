@@ -18,8 +18,7 @@ class Conexao{
             return self::$conexao;
             
         }catch (PDOException $e){
-            throw new Exception("Erro ao tentar conectar com o banco");
+            throw new Exception("Erro ao tentar conectar com o banco.<br/>".$e->getMessage());
         }
     }
 }
-
