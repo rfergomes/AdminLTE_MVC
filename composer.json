@@ -1,17 +1,24 @@
 {
-    "name": "adminlte/adminlte3-mvc-framework",
+    "name": "rfergomes/adminlte3-mvc-framework",
+    "description": "Atribuindo layout AdminLTE3 ao projeto Mini-Framework abordado no curso PHP MJailton - Metodo Agora",
+    "license": "MIT",
     "authors": [
         {
             "name": "Rodrigo Fernando Gomes Lima",
             "email": "rfergomes@gmail.com",
-            "homepage": "https://www.lglinformatica.com.br",
+            "homepage": "https://rfergomes.github.io/AdminLTE_MVC/",
             "role": "Developer"
         }
     ],
-    "license": "MIT",
+    "minimum-stability": "stable",
+    
     "autoload": {
         "psr-4": {
-            "app\\": "app/"}
+            "app\\": "app/"
+        },
+        "files": [
+            "config.php"
+        ]
     },
 
     "require": {
