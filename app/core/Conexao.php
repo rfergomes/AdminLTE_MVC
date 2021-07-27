@@ -10,9 +10,9 @@ class Conexao{
     public static function getConexao(){
         try{
             if(!self::$conexao){
-                self::$conexao = new \PDO("mysql:dbname=".BANCO.";host=".SERVIDOR,USUARIO,SENHA);
+                self::$conexao = new \PDO("mysql:dbname=".CONF_BD["BANCO"].";host=".CONF_BD["SERVIDOR"],CONF_BD["USUARIO"],CONF_BD["SENHA"]);
                 self::$conexao->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-                self::$conexao->exec("SET NAMES " . CHARSET);
+                self::$conexao->exec("SET NAMES " . CONF_BD["CHARSET"]);
             }
             
             return self::$conexao;
