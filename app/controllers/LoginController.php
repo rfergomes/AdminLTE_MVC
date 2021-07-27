@@ -39,6 +39,14 @@ class LoginController extends Controller {
         $dados["view"] = "Login/recuperar";
         $this->load("template_Login", $dados);
     }
+    
+    public function recover(){
+        if(isset($_POST)){
+            $email = $_POST["email"];
+            echo "<pre>";
+            print_r(EmailService::enviar("rfergomes@gmail.com","Enviando e-mail teste","PHPMailer teste"));
+        }
+    }
 
     public function registrar() {
         $dados["view"] = "Login/registrar";
