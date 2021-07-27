@@ -1,63 +1,38 @@
 <?php
 
-#Força HTTPS
-// iis sets HTTPS to 'off' for non-SSL requests
-if ($use_sts && isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-    header('Strict-Transport-Security: max-age=31536000');
-} elseif ($use_sts) {
-    header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], true, 301);
-    // we are in cleartext at the moment, prevent further execution and output
-    die();
+#Arquivos diretórios raízes
+$subpasta = "/agora_adminlte/";   //#Adicionar '/' no inicio e fim
+
+#Define URL do site LOCAL
+define('URL_BASE', $_SERVER["REQUEST_SCHEME"] . "://{$_SERVER['HTTP_HOST']}{$subpasta}");
+
+#Define URL padrão de Imagens
+define('URL_IMAGEM', $_SERVER["REQUEST_SCHEME"] . "://{$_SERVER['HTTP_HOST']}{$subpasta}fotos/");
+
+#Adiciona diretório na raiz, caso definido
+if (substr($_SERVER['DOCUMENT_ROOT'], -1) == '/') {
+    define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$subpasta}");
+} else {
+    define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$subpasta}");
 }
 
 #Define tipo de Acesso    
-define('ACESSO', $_SERVER['HTTP_HOST'] == 'www.ead.com.br' ? "remoto" : "local");
+define('HOSPEDAGEM', $_SERVER['HTTP_HOST'] == 'localhost' ? "local" : "remoto");
 
-#Arquivos diretórios raízes
-$PastaLocal = "/agora_adminlte/";   //#Adicionar '/' no inicio e fim
-$PastaRemota = "/"; //#Adicionar '/' no inicio e fim
-
-if (ACESSO == "local") {
+if (HOSPEDAGEM == "local") {
     #BANCO DE DADOS LOCAL
     define("SERVIDOR", "localhost");
-    define("BANCO", "agora_pedido");
+    define("BANCO", "adminlte");
     define("USUARIO", "root");
     define("SENHA", "");
     define("CHARSET", "UTF8");
-
-    #Define URL do site LOCAL
-    define('URL_BASE', "https://{$_SERVER['HTTP_HOST']}{$PastaLocal}");
-
-    #Define URL padrão de Imagens
-    define('URL_IMAGEM', "https://{$_SERVER['HTTP_HOST']}{$PastaLocal}fotos/");
-
-    #Adiciona diretório na raiz, caso definido
-    if (substr($_SERVER['DOCUMENT_ROOT'], -1) == '/') {
-        define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$PastaLocal}");
-    } else {
-        define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$PastaLocal}");
-    }
 } else {
-
     #BANCO DE DADOS REMOTO
-    define("SERVIDOR", "https://{$_SERVER['HTTP_HOST']}");
-    define("BANCO", "agora_ead_admin");
+    define("SERVIDOR", "{$protocolo}{$_SERVER['HTTP_HOST']}");
+    define("BANCO", "adminlte");
     define("USUARIO", "root");
     define("SENHA", "");
     define("CHARSET", "UTF8");
-
-    #Define URL do site REMOTO
-    define('URL_BASE', "https://{$_SERVER['HTTP_HOST']}{$PastaRemota}");
-
-    #Define URL paddrão de imagens
-    define('URL_IMAGEM', "https://{$_SERVER['HTTP_HOST']}{$PastaRemota}fotos/");
-
-    #Adiciona diretório na raiz, caso definido
-    if (substr($_SERVER['DOCUMENT_ROOT'], -1) == '/') {
-        define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$PastaRemota}");
-    } else {
-        define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$PastaRemota}");
-    }
 }
 
 define('CONTROLLER_PADRAO', 'home');
