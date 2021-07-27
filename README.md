@@ -21,7 +21,7 @@ Altamente personalizável e fácil de usar. Compatível com várias resoluções
 
 Adaptando template AdminLTE ao mini framework desenvolvido no curso MJailton - Método Ágora.
 
-### Instalação
+### INSTALAÇÃO
 Você pode clonar este repositório ou baixar o .zip
 
 Ao descompactar, é necessário rodar o **[composer](https://getcomposer.org/)** pra instalar as dependências e gerar o *autoload*.
@@ -41,8 +41,6 @@ Você pode desabilitar o redirecionamento *https* comentando as seguintes linhas
 #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ```
 
-
-
-#  A d m i n L T E _ P H P _ M V C _ F R A M E W O R K
+##  A d m i n L T E _ P H P _ M V C _ F R A M E W O R K
  
 ![Imagem](https://repository-images.githubusercontent.com/389662401/94241d10-f37b-4411-90f6-dbafdc66eab2)

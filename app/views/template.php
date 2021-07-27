@@ -45,6 +45,7 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
+    <?php i($_SERVER);?>
     <!-- Cabeçalho -->
     <?php include_once 'cabecalho.php'; ?>
     <!-- /.Cabeçalho -->
