@@ -17,23 +17,38 @@ if (substr($_SERVER['DOCUMENT_ROOT'], -1) == '/') {
 }
 
 #Define local de hospedagem   
-define('HOSPEDAGEM', $_SERVER['HTTP_HOST'] == 'localhost' ? "local" : "remoto");
+define('HOSPEDAGEM', $_SERVER['HTTP_HOST'] == 'localhost' ? "Local" : "Remoto");
 
-if (HOSPEDAGEM == "local") {
+if (HOSPEDAGEM == "Local") {
     #BANCO DE DADOS LOCAL
-    define("SERVIDOR", "localhost");
-    define("BANCO", "adminlte");
-    define("USUARIO", "root");
-    define("SENHA", "");
-    define("CHARSET", "UTF8");
+    define("CONF_BD",[
+        "SERVIDOR" => "localhost",
+        "BANCO" => "adminlte",
+        "USUARIO" => "root",
+        "SENHA" => "",
+        "CHARSET" => "UTF8"
+    ]);
 } else {
     #BANCO DE DADOS REMOTO
-    define("SERVIDOR", "{$protocolo}{$_SERVER['HTTP_HOST']}");
-    define("BANCO", "adminlte");
-    define("USUARIO", "root");
-    define("SENHA", "");
-    define("CHARSET", "UTF8");
+    define("CONF_BD",[
+        "SERVIDOR" => "{$protocolo}{$_SERVER['HTTP_HOST']}",
+        "BANCO" => "adminlte",
+        "USUARIO" => "root",
+        "SENHA" => "",
+        "CHARSET" => "UTF8"
+    ]);
 }
+
+#E-MAIL CONFIG
+define("CONF_MAIL", [
+    "HOST" => "smtp.sendgrid.net",
+    "PORTA" => "587",
+    "USUARIO" => "apikey",
+    "SENHA" => "",
+    "MODO" => "tls",
+    "REMETENTE" => "Reinaldo",
+    "EMAIL" => "reinaldorti@gmail.com"
+]);
 
 define('CONTROLLER_PADRAO', 'home');
 define('METODO_PADRAO', 'index');
