@@ -31,7 +31,14 @@ Vá até a pasta do projeto, pelo *prompt/terminal* e execute:
 ```bash
 composer install
 ```
+### HTTPS/SSL
+Você pode desabilitar o redirecionamento *HTTPS* comentando as seguintes linha no arquivo .htaccess:
 
+```bash
+# Forçar HTTPS/SSL
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+```
 
 
 

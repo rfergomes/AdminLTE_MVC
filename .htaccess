@@ -2,7 +2,7 @@ RewriteEngine On
 
 # Forçar HTTPS/SSL
 RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] [or]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Permissões
 RewriteCond %{REQUEST_FILENAME} !-f
