@@ -27,17 +27,18 @@ class EmailService
         $this->mail->setLanguage("br");
 
         $this->mail->SMTPAuth = true;
-        $this->mail->SMTPSecure = "tls";
+        $this->mail->SMTPSecure = CONF_MAIL["MODO"];
         $this->mail->CharSet = "utf-8";
 
-        $this->mail->Host = MAIL["host"];
-        $this->mail->Port = MAIL["port"];
-        $this->mail->Username = MAIL["user"];
-        $this->mail->Password = MAIL["passwd"];
+        $this->mail->Host = CONF_MAIL["HOST"];
+        $this->mail->Port = CONF_MAIL["PORTA"];
+        $this->mail->Username = CONF_MAIL["USUARIO"];
+        $this->mail->Password = CONF_MAIL["SENHA"];
     }
 
-    public static function email(string $subject, string $body, string $recipient_name, string $recipient_email): Email
+    public function email(string $subject, string $body, string $recipient_name, string $recipient_email): EmailService
     {
+        
         $this->data->subject = $subject;
         $this->data->body = $body;
         $this->data->recipient_name = $recipient_name;
@@ -45,13 +46,14 @@ class EmailService
         return $this;
     }
 
-    public static function anexo(string $filePath, string $fileName): Email
+    public function anexo(string $filePath, string $fileName): EmailService
     {
+        
         $this->data->attach[$filePath] = $fileName;
         return $this;
     }
 
-    public static function send(string $from_name = MAIL["from_name"], string $from_email = MAIL["from_email"]): bool
+    public function send(string $from_name = CONF_MAIL["REMETENTE"], string $from_email = CONF_MAIL["EMAIL"]): bool
     {
         try {
             $this->mail->Subject = $this->data->subject;
@@ -73,7 +75,7 @@ class EmailService
         }
     }
 
-    public static function error(): ?Exception
+    public function error(): ?Exception
     {
         return $this->error;
     }
