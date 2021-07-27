@@ -5,7 +5,7 @@
 [![cdn version](https://data.jsdelivr.com/v1/package/npm/admin-lte/badge)](https://www.jsdelivr.com/package/npm/admin-lte)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-**AdminLTE** é um modelo de administração totalmente responsivo. Baseado no framework **[Bootstrap 4.6](https://getbootstrap.com/)** e também no plugin JS/jQuery.
+**AdminLTE** é um modelo de administração totalmente responsivo. Baseado no framework **[Bootstrap 4.6](https://getbootstrap.com/)** e plugin **[JS/jQuery](https://jquery.com/)**.
 Altamente personalizável e fácil de usar. Compatível com várias resoluções de tela, de pequenos dispositivos móveis a grandes desktops.
 
 **Pré-visualizar em [AdminLTE.io](https://adminlte.io/themes/v3)**
@@ -22,13 +22,13 @@ Altamente personalizável e fácil de usar. Compatível com várias resoluções
 Adaptando template AdminLTE ao mini framework desenvolvido no curso MJailton - Método Ágora.
 
 ## Instalação
-Você pode clonar este repositório OU baixar o .zip
+Você pode clonar este repositório ou baixar o .zip
 
 Ao descompactar, é necessário rodar o **[composer](https://getcomposer.org/)** pra instalar as dependências e gerar o *autoload*.
 
 Vá até a pasta do projeto, pelo *prompt/terminal* e execute:
->C:\xampp\htdocs\projeto>
-```cmd
+>Exemplo: C:\xampp\htdocs\projeto>composer install
+```bash
 composer install
 ```
 
