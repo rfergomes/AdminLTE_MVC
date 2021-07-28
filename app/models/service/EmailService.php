@@ -13,7 +13,8 @@ class EmailService
 
         try {
             //Server settings
-            $mail->isSMTP();                                        //Send using SMTP
+            $mail->isSMTP();
+            $mail->setLanguage('br');                                //Send using SMTP
             $mail->Host       = CONF_MAIL["HOST"];                  //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                               //Enable SMTP authentication
             $mail->Username   = CONF_MAIL["USUARIO"];               //SMTP username
@@ -42,7 +43,7 @@ class EmailService
             $mail->send();
             return true;
         } catch (Exception $e) {
-            //echo "Não foi possível enviar o e-mail. {$mail->ErrorInfo}<br><pre>". print_r($e);
+            //throw new Exception("Não foi possível enviar o e-mail.<br /> {$mail->ErrorInfo}.<br />".$e->getMessage());
             return false;
         }
     }
