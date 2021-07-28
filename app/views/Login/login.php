@@ -5,6 +5,7 @@
         $this->verErro();
         ?>
         <!-- /.login-logo -->
+
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
                 <a href="<?= URL_BASE ?>" class="h1"><b>Admin</b>LTE</a>

@@ -41,13 +41,13 @@ if (HOSPEDAGEM == "Local") {
 
 #E-MAIL CONFIG
 define("CONF_MAIL", [
-    "HOST" => "quimicosunificados.ddns.net",//"smtp-auth.no-ip.com",
+    "HOST" => "mail.noip.com",
     "PORTA" => "587",
-    "USUARIO" => "admin@quimicosunificados.ddns.net",
+    "USUARIO" => "webmaster@quimicosunificados.ddns.net",
     "SENHA" => "Mudar@123",
     "MODO" => "tls",
     "REMETENTE" => "Químicos Unificados",
-    "EMAIL" => "quimicos.backup@gmail.com"
+    "EMAIL" => "webmaster@quimicosunificados.ddns.net"
 ]);
 
 define('CONTROLLER_PADRAO', 'home');

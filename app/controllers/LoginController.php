@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\util\UtilService;
+use app\models\service\EmailService;
+use app\core\Flash;
 
 class LoginController extends Controller {
 
@@ -43,8 +45,15 @@ class LoginController extends Controller {
     public function recover(){
         if(isset($_POST)){
             $email = $_POST["email"];
-            echo "<pre>";
-            print_r(EmailService::enviar("rfergomes@gmail.com","Enviando e-mail teste","PHPMailer teste"));
+            $nome="Rodrigo Lima";
+
+
+            if(EmailService::enviar($nome, $email,"Recuperação de Senha","Click no link para recuperar sua senha: <a href='".URL_BASE."login/recuperar'>Nova Senha</a>")){
+                Flash::setMsg("Enviamos um e-mail com instruções para recuperar sua senha. Verifique seu e-mail.",2);
+            }else{
+                Flash::setMsg("Não foi possível recuperar sua senha. Tente novamente mais tarde ou entre em contato com o <a href='mailto:webmaster@quimicosunificados.ddns.net?subject=Erro ao recuperar senha'>Administrador</a> do Sistema.",-1);
+            }
+            $this->redirect(URL_BASE."login");
         }
     }
 

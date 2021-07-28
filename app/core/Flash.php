@@ -3,19 +3,27 @@ namespace app\core;
 
 class Flash{
     public static function setMsg($msg, $tipo=1){
-        //1 - sucesso / -1 erro / 2 info
-        $classe = "sucesso";
-        $icone  = "fa-check";
+        //Tipo: 1 - sucesso / -1 erro / 2 info / 3 alerta
+        $titulo = "Sucesso!";
+        $classe = "alert-success alert-dismissible";
+        $icone  = "fas fa-check";
         if($tipo==-1){
-            $classe = "erro";
-            $icone  = "fa-exclamation-triangle";
+            $titulo = "Atenção!";
+            $classe = "alert-danger alert-dismissible"; 
+            $icone  = "fas fa-ban";
         }else if($tipo==2){
-            $classe="info";
-            $icone  = "fa-exclamation-circle";
+            $titulo = "Informação!";
+            $classe="alert-info alert-dismissible";
+            $icone  = "fas fa-info";
+        }else if($tipo==3){
+            $titulo = "Alerta!";
+            $classe="alert-warning alert-dismissible";
+            $icone  = "fas fa-exclamation-triangle";
         }
         
         $resultado = (object) array(
             "tipo" => $tipo,
+            "titulo" => $titulo,
             "msg"  => $msg,
             "classe"=> $classe,
             "icone" => $icone
