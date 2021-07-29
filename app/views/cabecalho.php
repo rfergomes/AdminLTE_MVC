@@ -11,10 +11,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="<?= URL_BASE ?>" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contact</a>
+          <a href="<?= URL_BASE ?>" class="nav-link"><i class="fas fa-home"></i> Home</a>
         </li>
       </ul>
 
@@ -100,6 +97,7 @@
             <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
           </div>
         </li>
+
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
@@ -132,10 +130,39 @@
             <i class="fas fa-expand-arrows-alt"></i>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
             <i class="fas fa-th-large"></i>
           </a>
+        </li>
+        <li class="nav-item dropdown user-menu">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            <img src="<?= URL_BASE ?>assets/img/foto.png" class="user-image img-circle elevation-2" alt="User Image">
+            <span class="d-none d-md-inline"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right card-primary card-outline">
+            <div class="card-header">
+              <div class="text-center">
+                <img class="profile-user-img img-fluid img-circle" src="<?= URL_BASE ?>assets/img/foto.png" alt="User profile picture">
+              </div>
+              <h3 class="profile-username text-center">MJailton</h3>
+              <p class="text-muted text-center">Software Developer</p>
+            </div>
+            <div class="card-body box-profile">
+              <ul class="list-group list-group-unbordered mb-2">
+                <li class="list-group-item">
+                  <p><b>Seguidores</b> <a class="float-right">1.322</a></p>
+                  <p><b>Seguindo</b> <a class="float-right">543</a></p>
+                </li>
+                <li class="list-group-item">
+                  <b>Amigos</b> <a class="float-right">13.287</a>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-outline-info btn-sm"><i class="far fa-id-card"></i> Perfil</a>
+              <a href="<?= URL_BASE . "login/logout"; ?>" class="btn btn-outline-danger btn-sm float-right"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+            <!-- /.card-body -->
+          </div>
         </li>
       </ul>
     </nav>
