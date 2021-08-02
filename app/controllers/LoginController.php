@@ -37,7 +37,9 @@ class LoginController extends Controller {
         $this->load("template_Login", $dados);
     }
 
-    public function recuperar() {
+    public function recuperar($token, $id_usuario) {
+        $dados["token"] = $token;
+        $dados["id_usuario"] = $id_usuario;
         $dados["view"] = "Login/recuperar";
         $this->load("template_Login", $dados);
     }
@@ -46,14 +48,21 @@ class LoginController extends Controller {
         if(isset($_POST)){
             $email = $_POST["email"];
             $nome="Rodrigo Lima";
+            $id_usuario = 123;
+            $token = intval( "0" . rand(1,9) . rand(2,9) . rand(3,9) . rand(4,9) . rand(5,9) );
 
-
-            if(EmailService::enviar($nome, $email,"Recuperação de Senha","Click no link para recuperar sua senha: <a href='".URL_BASE."login/recuperar'>Nova Senha</a>")){
+            if(EmailService::enviar($nome, $email,"Recuperação de Senha","Click no link para recuperar sua senha: <a href='".URL_BASE."login/recuperar/$token/$id_usuario'>Nova Senha</a>")){
                 Flash::setMsg("Enviamos um e-mail com instruções para recuperar sua senha. Verifique seu e-mail.",2);
             }else{
                 Flash::setMsg("Não foi possível recuperar sua senha. Tente novamente mais tarde ou entre em contato com o <a href='mailto:webmaster@quimicosunificados.ddns.net?subject=Erro ao recuperar senha'>Administrador</a> do Sistema.",-1);
             }
             $this->redirect(URL_BASE."login");
+        }
+    }
+
+    public function novaSenha(){
+        if(isset($_POST)){
+            i($_POST);
         }
     }
 
