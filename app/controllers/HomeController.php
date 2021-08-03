@@ -12,16 +12,17 @@ class HomeController extends Controller {
         $this->setDescription("Página Home do Sistema");
         $this->setKeywords("mvc completo, home, dashboard");
         $this->setDir("");
-        /*
+        
         $this->usuario = UtilService::getUsuario();
         if (!$this->usuario) {
             $this->redirect(URL_BASE . "login");
             exit;
         }
-        */
+        
     }
 
     public function index() {
+        $dados["usuario"] = $this->usuario;
         $dados["view"] = "home";
         $this->load("template", $dados);
     }

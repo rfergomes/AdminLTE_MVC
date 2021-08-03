@@ -17,13 +17,12 @@ if (substr($_SERVER['DOCUMENT_ROOT'], -1) == '/') {
 }
 
 #Define local de hospedagem   
-define('HOSPEDAGEM', $_SERVER['HTTP_HOST'] == 'localhost' ? "Local" : "Remoto");
-
+define('HOSPEDAGEM', $_SERVER["SERVER_ADDR"] == '::1' ? "Local" : "Remoto");
 if (HOSPEDAGEM == "Local") {
     #BANCO DE DADOS LOCAL
     define("CONF_BD",[
         "SERVIDOR" => "localhost",
-        "BANCO" => "adminlte",
+        "BANCO" => "agora_adminlte",
         "USUARIO" => "root",
         "SENHA" => "",
         "CHARSET" => "UTF8"

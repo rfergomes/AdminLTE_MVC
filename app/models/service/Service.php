@@ -98,7 +98,7 @@ class Service {
                 return true;
             }
         }
-        Flash::setMsg("Login ou senha não encontrados", -1);
+        Flash::setMsg("E-mail ou senha não encontrados", -1);
         unset($_SESSION[SESSION_LOGIN]);
         return false;
     }

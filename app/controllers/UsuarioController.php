@@ -12,13 +12,13 @@ class UsuarioController extends Controller {
         $this->setDescription("Sistema MVC - Usuários");
         $this->setKeywords("mvc completo, curso de mvc, mjailton");
         $this->setDir("Usuario");
-        /*
+        
         $this->usuario = UtilService::getUsuario();
         if (!$this->usuario) {
             $this->redirect(URL_BASE . "login");
             exit;
         }
-        */
+        
     }
 
     public function index() {
