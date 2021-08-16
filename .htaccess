@@ -1,13 +1,16 @@
+Options +FollowSymLinks -MultiViews -Indexes
 RewriteEngine On
-Options All -Indexes
 
 # Redirecionamento WWW
-RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Redirecionamento HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
 # Reescrevendo URL
 RewriteCond %{REQUEST_FILENAME} !-f
