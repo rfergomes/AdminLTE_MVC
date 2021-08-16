@@ -6,12 +6,15 @@ use function Composer\Autoload\includeFile;
 class Controller{
 
     private $Dir;
+    private $Page;
     private $Title;
     private $Description;
     private $Keywords;
 
     public function getDir() { return $this->Dir; }
     public function setDir($Dir) { $this->Dir = $Dir; }
+    public function getPage() { return $this->Page; }
+    public function setPage($Page) { $this->Page = $Page; }
     public function getTitle() { return $this->Title; }
     public function setTitle($Title) { $this->Title = TITULO_SITE.$Title; }
     public function getDescription() { return $this->Description; }
