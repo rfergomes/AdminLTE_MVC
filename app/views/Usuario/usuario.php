@@ -1,47 +1,63 @@
-<h1 class="titulo"> LISTA DE USUÁRIOS</h1>
-<div class="base-lista">
-    <div class="rows">
-        <div class="col-12 d-flex text-justify-end mb-2">
-            <a href="<?= URL_BASE ?>usuario/cadastro" class="btn mx-1">Adicionar novo</a>
-            <a href="" class="filtro btn btn-azul d-inline-block">Filtrar</a>
-        </div>
-        <div class="col-12">
-            <div class="mostraFiltro">
-                <form action="" method="">
-                    <div class="rows">
-                        <div class="col-10"><input type="text" placeholder="Curso" class="form-campo"></div>
-                        <div class="col-2"><input type="submit" value="Buscar" class="btn width-100"></div>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0"><?= $this->getPage(); ?></h1>
+            </div><!-- /.col -->
+            <!-- Breadcrumb -->
+            <div class="col-sm-6">
+                <?= $breadcrumb ?>
+            </div>
+            <!-- Breadcrumb -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Lista de Usuários</h3>
+                        <div class="text-right">
+                            <a href="<?= URL_BASE ?>usuario/cadastro" class="btn btn-sm btn-success"><i class="fas fa-user-plus"></i> Novo</a>
+                            <a href="" class="btn btn-sm btn-primary d-inline-block"><i class="fas fa-filter"></i> Filtrar</a>
+                        </div>
                     </div>
-                </form>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" width="8%">id</th>
+                                    <th class="text-left" width="50%" >Usuario</th>
+                                    <th class="text-center">Duração</th>
+                                    <th class="text-center">Embed</th>
+                                    <th class="text-center">Editar</th>
+                                    <th class="text-center">Excluir </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($usuarios as $lista){ ?>
+                                <tr>
+                                    <td class="text-center"><?= $lista->id_usuario ?></td>
+                                    <td class="text-left"><?= $lista->nome ?></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"><a href="<?= URL_BASE ?>usuario/editar/<?= $lista->id_usuario ?>" class="btn btn-xs btn-warning"><i class="fas fa-user-edit"></i> Editar</a></td>
+                                    <td class="text-center"><a href="<?= URL_BASE ?>usuario/excluir/<?= $lista->id_usuario ?>" class="btn btn-xs btn-danger"><i class="fas fa-user-minus"></i> Excluir</a></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="col-12">
-            <table cellpadding="0" cellspacing="0" border="0" id="dataTable">
-                <thead>
-                    <tr>
-                        <th width="8%">id</th>
-                        <th width="50%" align="left">Usuario</th>
-                        <th align="center">Duração</th>
-                        <th align="center">Embed</th>
-                        <th >Editar</th>
-                        <th>Excluir </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td align="center">1</td>
-                        <td align="left">Mano Jailton</td>
-                        <td align="center"></td>
-                        <td align="center"></td>
-                        <td><a href="<?= URL_BASE ?>usuario/cadastro" class="btn editar">Editar</a></td>
-                        <td><a href="<?= URL_BASE ?>usuario/cadastro" class="btn btn-vermelho">Excluir</a></td>
-                    </tr>
-
-
-                </tbody>
-            </table>
-        </div>
-
     </div>
-</div>            	
+</section>
+<!-- /.content -->

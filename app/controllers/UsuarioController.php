@@ -4,11 +4,14 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\util\UtilService;
+use app\models\service\Service;
+use app\classes\Breadcrumb;
 
 class UsuarioController extends Controller {
 
     public function __construct() {
-        $this->setTitle("EAD - Usuários");
+        $this->setPage("EAD - Usuários");
+        $this->setTitle($this->getPage());
         $this->setDescription("Sistema MVC - Usuários");
         $this->setKeywords("mvc completo, curso de mvc, mjailton");
         $this->setDir("Usuario");
@@ -22,6 +25,10 @@ class UsuarioController extends Controller {
     }
 
     public function index() {
+        $breadcrumb = new Breadcrumb();
+        $dados["breadcrumb"] = $breadcrumb->addBreadcrumb();
+        $dados["usuario"] = $this->usuario;
+        $dados["usuarios"] = Service::lista("usuario");
         $dados["view"] = "Usuario/usuario";
         $this->load("template", $dados);
     }
