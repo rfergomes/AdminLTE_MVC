@@ -41,6 +41,29 @@
         </ul>
       </li>
       <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-users"></i>
+          <p>
+            Usuários
+            <i class="fas fa-angle-left right"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="<?= URL_BASE . "usuario" ?>" class="nav-link">
+              <i class="far fa-list-alt nav-icon"></i>
+              <p>Lista</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= URL_BASE . "usuario/cadastro" ?>" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Cadastro</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
         <a href="pages/widgets.html" class="nav-link">
           <i class="nav-icon fas fa-th"></i>
           <p>

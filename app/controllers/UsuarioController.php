@@ -10,7 +10,7 @@ use app\classes\Breadcrumb;
 class UsuarioController extends Controller {
 
     public function __construct() {
-        $this->setPage("EAD - Usuários");
+        $this->setPage("Usuários");
         $this->setTitle($this->getPage());
         $this->setDescription("Sistema MVC - Usuários");
         $this->setKeywords("mvc completo, curso de mvc, mjailton");
@@ -34,6 +34,17 @@ class UsuarioController extends Controller {
     }
     
     public function cadastro() {
+        $breadcrumb = new Breadcrumb();
+        $dados["breadcrumb"] = $breadcrumb->addBreadcrumb();
+        $dados["usuario"] = $this->usuario;
+        $dados["view"] = "Usuario/cadastro";
+        $this->load("template", $dados);
+    }
+
+    public function editar($id_usuario) {
+        $breadcrumb = new Breadcrumb();
+        $dados["breadcrumb"] = $breadcrumb->addBreadcrumb();
+        $dados["usuario"] = $this->usuario;
         $dados["view"] = "Usuario/cadastro";
         $this->load("template", $dados);
     }
