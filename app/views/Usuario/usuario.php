@@ -20,6 +20,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                <?=
+                $this->verMsg();
+                $this->verErro();
+                ?>
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Lista de Usuários</h3>
@@ -34,7 +38,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center" width="8%">id</th>
-                                    <th class="text-left" width="50%" >Usuario</th>
+                                    <th class="text-left" width="50%">Usuario</th>
                                     <th class="text-center">Duração</th>
                                     <th class="text-center">Embed</th>
                                     <th class="text-center">Editar</th>
@@ -42,15 +46,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach($usuarios as $lista){ ?>
-                                <tr>
-                                    <td class="text-center"><?= $lista->id_usuario ?></td>
-                                    <td class="text-left"><?= $lista->nome ?></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"><a href="<?= URL_BASE ?>usuario/editar/<?= $lista->id_usuario ?>" class="btn btn-xs btn-warning"><i class="fas fa-user-edit"></i> Editar</a></td>
-                                    <td class="text-center"><a href="<?= URL_BASE ?>usuario/excluir/<?= $lista->id_usuario ?>" class="btn btn-xs btn-danger"><i class="fas fa-user-minus"></i> Excluir</a></td>
-                                </tr>
+                                <?php foreach ($usuarios as $lista) { ?>
+                                    <tr>
+                                        <td class="text-center"><?= $lista->id_usuario ?></td>
+                                        <td class="text-left"><?= $lista->usuario ?></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"><a href="<?= URL_BASE ?>usuario/editar/<?= $lista->id_usuario ?>" class="btn btn-xs btn-warning"><i class="fas fa-user-edit"></i> Editar</a></td>
+                                        <td class="text-center"><a href="<?= URL_BASE ?>usuario/excluir/<?= $lista->id_usuario ?>" class="btn btn-xs btn-danger"><i class="fas fa-user-minus"></i> Excluir</a></td>
+                                    </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
