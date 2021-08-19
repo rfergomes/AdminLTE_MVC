@@ -36,6 +36,7 @@ class LoginController extends Controller
     {
         $email = isset($_POST["email"]) ? trim(strip_tags(filter_input(INPUT_POST, "email"))) : NULL;
         $senha = isset($_POST["senha"]) ? trim(strip_tags(filter_input(INPUT_POST, "senha"))) : NULL;
+        $lembrar = isset($_POST["lembrar"]) ? trim(strip_tags(filter_input(INPUT_POST, "lembrar"))) : NULL;
 
         Flash::setForm($_POST);
         if (Service::logar("email", $email, $senha, "usuario")) {
@@ -102,6 +103,7 @@ class LoginController extends Controller
     public function logoff()
     {
         unset($_SESSION[SESSION_LOGIN]);
+        session_destroy();
         $this->redirect(URL_BASE . "login");
     }
 }
