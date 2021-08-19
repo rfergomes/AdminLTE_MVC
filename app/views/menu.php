@@ -21,21 +21,15 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="./index.html" class="nav-link active">
+            <a href="<?= URL_BASE ?>" class="nav-link active">
               <i class="far fa-circle nav-icon"></i>
-              <p>Dashboard v1</p>
+              <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="./index2.html" class="nav-link">
+            <a href="<?= URL_BASE . "home/modelo" ?>" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Dashboard v2</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?= URL_BASE ?>" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Dashboard v3</p>
+              <p>Modelo</p>
             </a>
           </li>
         </ul>

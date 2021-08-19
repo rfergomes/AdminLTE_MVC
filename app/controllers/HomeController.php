@@ -28,4 +28,11 @@ class HomeController extends Controller {
         $dados["view"] = "home";
         $this->load("template", $dados);
     }
+
+    public function modelo(){
+        $breadcrumb = new Breadcrumb();
+        $dados["breadcrumb"] = $breadcrumb->addBreadcrumb();
+        $dados["view"] = "modelo";
+        $this->load("template", $dados);
+    }
 }
