@@ -137,19 +137,18 @@
         </li>
         <li class="nav-item dropdown user-menu">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-            <img src="<?= URL_IMAGEM . $usuario->foto ?>" class="user-image img-circle elevation-2" alt="User Image">
+            <img src="<?= URL_IMAGEM . $_SESSION[SESSION_LOGIN]->foto ?>" class="user-image img-circle elevation-2" alt="User Image">
             <span class="d-none d-md-inline"></span>
           </a>
           <div class="dropdown-menu dropdown-menu-right card-primary card-outline">
             <div class="card-header">
               <div class="text-center">
-                <img class="profile-user-img img-fluid img-circle" src="<?= URL_IMAGEM . $usuario->foto ?>" alt="User profile picture">
+                <img class="profile-user-img img-fluid img-circle" src="<?= URL_IMAGEM . $_SESSION[SESSION_LOGIN]->foto ?>" alt="User profile picture">
               </div>
-              <h3 class="profile-username text-center"><?= $usuario->nome ?></h3>
-              <p class="text-muted text-center"><?= $usuario->id_nivel ?></p>
+              <h3 class="profile-username text-center"><?= $_SESSION[SESSION_LOGIN]->usuario ?></h3>
+              <p class="text-muted text-center"><?= $_SESSION[SESSION_LOGIN]->id_nivel ?></p>
             </div>
             <div class="card-body box-profile">
-              
               <a href="#" class="btn btn-outline-info btn-sm"><i class="far fa-id-card"></i> Perfil</a>
               <a href="<?= URL_BASE . "login/logoff"; ?>" class="btn btn-outline-danger btn-sm float-right"><i class="fas fa-sign-out-alt"></i> Sair</a>
             </div>

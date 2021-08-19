@@ -25,7 +25,6 @@ class HomeController extends Controller {
     public function index() {
         $breadcrumb = new Breadcrumb();
         $dados["breadcrumb"] = $breadcrumb->addBreadcrumb();
-        $dados["usuario"] = $this->usuario;
         $dados["view"] = "home";
         $this->load("template", $dados);
     }
