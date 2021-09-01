@@ -46,17 +46,17 @@
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="cpf">CPF</label>
-                                    <input type="text" class="form-control" name="cpf" id="cpf" value="<?= isset($usuario->cpf) ? $usuario->cpf : null ?>" placeholder="CPF">
+                                    <input type="text" class="form-control mascara-cpf" name="cpf" id="cpf" value="<?= isset($usuario->cpf) ? $usuario->cpf : null ?>" placeholder="CPF">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-2">
                                     <label for="cep">CEP</label>
-                                    <input type="text" class="form-control" name="cep" id="cep" value="<?= isset($usuario->cep) ? $usuario->cep : null ?>" placeholder="CEP">
+                                    <input type="text" class="form-control mascara-cep busca_cep" name="cep" id="cep" value="<?= isset($usuario->cep) ? $usuario->cep : null ?>" placeholder="CEP">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="endereco">Endereço</label>
-                                    <input type="text" class="form-control" name="endereco" id="endereco" value="<?= isset($usuario->endereco) ? $usuario->endereco : null ?>" placeholder="Logradouro">
+                                    <input type="text" class="form-control rua" name="endereco" id="endereco" value="<?= isset($usuario->endereco) ? $usuario->endereco : null ?>" placeholder="Logradouro">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="numero">Número</label>
@@ -70,17 +70,17 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="bairro">Bairro</label>
-                                    <input type="text" class="form-control" name="bairro" id="bairro" value="<?= isset($usuario->bairro) ? $usuario->bairro : null ?>" placeholder="Bairro">
+                                    <input type="text" class="form-control bairro" name="bairro" id="bairro" value="<?= isset($usuario->bairro) ? $usuario->bairro : null ?>" placeholder="Bairro">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="cidade">Cidade</label>
-                                    <input type="text" class="form-control" name="cidade" id="cidade" value="<?= isset($usuario->cidade) ? $usuario->cidade : null ?>" placeholder="Cidade">
+                                    <input type="text" class="form-control cidade" name="cidade" id="cidade" value="<?= isset($usuario->cidade) ? $usuario->cidade : null ?>" placeholder="Cidade">
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="uf_sigla">UF</label>
-                                    <select name="uf_sigla" id="uf_sigla" class="form-control">
+                                    <select name="uf_sigla" id="uf_sigla" class="form-control estado">
                                         <?php foreach($estados as $uf){ ?>
-                                            <option value="<?= $uf->sigla ?>"<?= isset($usuario->uf_sigla) && $usuario->uf_sigla == $uf->sigla ? "selected" : "" ?>><?= $uf->sigla ?></option>
+                                            <option value="<?= $uf->uf_estado ?>"<?= isset($usuario->uf_sigla) && $usuario->uf_sigla == $uf->uf_estado ? "selected" : "" ?>><?= $uf->uf_estado ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -96,11 +96,11 @@
                             <div class="form-row">
                                 <div class="form-group col-md-2">
                                     <label for="telefone">Telefone</label>
-                                    <input type="text" class="form-control" name="telefone" id="telefone" value="<?= isset($usuario->telefone) ? $usuario->telefone : null ?>" placeholder="Telefone">
+                                    <input type="text" class="form-control mascara-fone" name="telefone" id="telefone" value="<?= isset($usuario->telefone) ? $usuario->telefone : null ?>" placeholder="Telefone">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="celular">Celular</label>
-                                    <input type="text" class="form-control" name="celular" id="celular" value="<?= isset($usuario->celular) ? $usuario->celular : null ?>" placeholder="Celular">
+                                    <input type="text" class="form-control mascara-celular" name="celular" id="celular" value="<?= isset($usuario->celular) ? $usuario->celular : null ?>" placeholder="Celular">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="email">E-mail</label>

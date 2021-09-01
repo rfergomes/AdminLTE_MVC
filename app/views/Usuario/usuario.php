@@ -34,7 +34,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example" class="table table-bordered table-hover">
+                    <table id="example1" class="table table-bordered table-hover dataTable dtr-inline collapsed" role="grid" aria-describedby="example2_info">
                             <thead>
                                 <tr>
                                     <th class="text-center" width="8%">id</th>
@@ -65,3 +65,4 @@
     </div>
 </section>
 <!-- /.content -->
+

@@ -19,7 +19,6 @@ class Breadcrumb {
         foreach ($path AS $x => $crumb) {
             // Our "title" is the text that will be displayed (strip out .php and turn '_' into a space)
             $title = ucwords(str_replace(Array('.php', '_'), Array('', ' '), $crumb));
-            echo ucwords($path[0])." | " .ucwords($crumb);
             if(ucwords($path[0]) != ucwords($crumb) && $x == 0){
                 $breadcrumbs[] = "<li class='breadcrumb-item'><a href='". URL_BASE ."'>$home</a></li>";
             }
