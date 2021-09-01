@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Ago-2021 às 21:47
+-- Tempo de geração: 01-Set-2021 às 04:24
 -- Versão do servidor: 10.4.20-MariaDB
 -- versão do PHP: 7.4.22
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `agora_adminlte`
 --
+CREATE DATABASE IF NOT EXISTS `agora_adminlte` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `agora_adminlte`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `estados`
 --
 
+DROP TABLE IF EXISTS `estados`;
 CREATE TABLE `estados` (
   `id_estado` int(16) NOT NULL,
   `id_regiao` int(11) DEFAULT NULL,
@@ -74,10 +77,19 @@ INSERT INTO `estados` (`id_estado`, `id_regiao`, `nome_estado`, `uf_estado`, `co
 -- Estrutura da tabela `nivel`
 --
 
+DROP TABLE IF EXISTS `nivel`;
 CREATE TABLE `nivel` (
   `id_nivel` int(11) NOT NULL,
-  `nivel` int(11) NOT NULL
+  `nivel` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `nivel`
+--
+
+INSERT INTO `nivel` (`id_nivel`, `nivel`) VALUES
+(1, 'Administrador'),
+(2, 'Supervisor');
 
 -- --------------------------------------------------------
 
@@ -85,6 +97,7 @@ CREATE TABLE `nivel` (
 -- Estrutura da tabela `regiao`
 --
 
+DROP TABLE IF EXISTS `regiao`;
 CREATE TABLE `regiao` (
   `id_regiao` int(11) NOT NULL,
   `regiao` varchar(25) NOT NULL
@@ -107,6 +120,7 @@ INSERT INTO `regiao` (`id_regiao`, `regiao`) VALUES
 -- Estrutura da tabela `status`
 --
 
+DROP TABLE IF EXISTS `status`;
 CREATE TABLE `status` (
   `id_status` int(11) NOT NULL,
   `status` varchar(50) NOT NULL
@@ -128,10 +142,11 @@ INSERT INTO `status` (`id_status`, `status`) VALUES
 -- Estrutura da tabela `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
-  `nome` varchar(120) NOT NULL,
-  `data_nascimento` date NOT NULL,
+  `usuario` varchar(120) NOT NULL,
+  `nascimento` date NOT NULL,
   `cpf` varchar(14) NOT NULL,
   `cep` varchar(10) NOT NULL,
   `endereco` varchar(100) DEFAULT NULL,
@@ -139,7 +154,7 @@ CREATE TABLE `usuario` (
   `complemento` varchar(20) DEFAULT NULL,
   `bairro` varchar(60) DEFAULT NULL,
   `cidade` varchar(60) DEFAULT NULL,
-  `id_estado` int(11) DEFAULT NULL,
+  `uf_sigla` varchar(2) NOT NULL,
   `id_nivel` int(11) NOT NULL,
   `telefone` varchar(14) DEFAULT NULL,
   `celular` varchar(16) DEFAULT NULL,
@@ -155,8 +170,8 @@ CREATE TABLE `usuario` (
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nome`, `data_nascimento`, `cpf`, `cep`, `endereco`, `numero`, `complemento`, `bairro`, `cidade`, `id_estado`, `id_nivel`, `telefone`, `celular`, `email`, `senha`, `token`, `foto`, `conta_verificada`, `id_status`) VALUES
-(1, 'Rodrigo Fernando Gomes Lima', '0000-00-00', '', '', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 'rfergomes@gmail.com', '123', NULL, 'usuario.png', 1, 1);
+INSERT INTO `usuario` (`id_usuario`, `usuario`, `nascimento`, `cpf`, `cep`, `endereco`, `numero`, `complemento`, `bairro`, `cidade`, `uf_sigla`, `id_nivel`, `telefone`, `celular`, `email`, `senha`, `token`, `foto`, `conta_verificada`, `id_status`) VALUES
+(1, 'Administrador', '0000-00-00', '000.000.000-00', '00000-000', 'Rua do Bairro', '1000', 'Lado Par', 'Bairro', 'Cidade', 'AC', 1, '(00) 0000-0000', '(00) 00000-0000', 'admin@gmail.com', '$2y$10$.yF.lNaRJw7.btLO9VT23OkYPfibGzTo4y7qnqjVf9FZ8wGu4wXTG', NULL, 'usuario.png', 1, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -166,7 +181,8 @@ INSERT INTO `usuario` (`id_usuario`, `nome`, `data_nascimento`, `cpf`, `cep`, `e
 -- Índices para tabela `estados`
 --
 ALTER TABLE `estados`
-  ADD PRIMARY KEY (`id_estado`);
+  ADD PRIMARY KEY (`id_estado`),
+  ADD KEY `id_regiao` (`id_regiao`);
 
 --
 -- Índices para tabela `nivel`
@@ -190,7 +206,9 @@ ALTER TABLE `status`
 -- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD KEY `id_estado` (`uf_sigla`),
+  ADD KEY `id_status` (`id_status`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -206,7 +224,7 @@ ALTER TABLE `estados`
 -- AUTO_INCREMENT de tabela `nivel`
 --
 ALTER TABLE `nivel`
-  MODIFY `id_nivel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_nivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `regiao`
@@ -224,7 +242,17 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `estados`
+--
+ALTER TABLE `estados`
+  ADD CONSTRAINT `estados_ibfk_1` FOREIGN KEY (`id_regiao`) REFERENCES `regiao` (`id_regiao`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
