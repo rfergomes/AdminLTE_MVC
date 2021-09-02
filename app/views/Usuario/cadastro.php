@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="complemento">Complemento</label>
-                                    <input type="text" class="form-control" name="complemento" id="complemento" value="<?= isset($usuario->complemento) ? $usuario->complemento : null ?>" placeholder="Complemento">
+                                    <input type="text" class="form-control complemento" name="complemento" id="complemento" value="<?= isset($usuario->complemento) ? $usuario->complemento : null ?>" placeholder="Complemento">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -96,11 +96,11 @@
                             <div class="form-row">
                                 <div class="form-group col-md-2">
                                     <label for="telefone">Telefone</label>
-                                    <input type="text" class="form-control mascara-fone" name="telefone" id="telefone" value="<?= isset($usuario->telefone) ? $usuario->telefone : null ?>" placeholder="Telefone">
+                                    <input type="text" class="form-control mascara-fone ddd" name="telefone" id="telefone" value="<?= isset($usuario->telefone) ? $usuario->telefone : null ?>" placeholder="Telefone">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="celular">Celular</label>
-                                    <input type="text" class="form-control mascara-celular" name="celular" id="celular" value="<?= isset($usuario->celular) ? $usuario->celular : null ?>" placeholder="Celular">
+                                    <input type="text" class="form-control mascara-celular ddd" name="celular" id="celular" value="<?= isset($usuario->celular) ? $usuario->celular : null ?>" placeholder="Celular">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="email">E-mail</label>
