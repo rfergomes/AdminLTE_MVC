@@ -72,7 +72,7 @@ class UsuarioController extends Controller
         if ($_POST["id_usuario"] != null) {
             $usuario->id_usuario =     trim(strip_tags(filter_input(INPUT_POST, "id_usuario")));
         }
-        if($_POST["senha"]){
+        if ($_POST["senha"]) {
             $usuario->senha =       password_hash(trim(strip_tags(filter_input(INPUT_POST, "senha"))), PASSWORD_DEFAULT);
         }
         $usuario->usuario =         trim(strip_tags(filter_input(INPUT_POST, "usuario")));
@@ -89,7 +89,7 @@ class UsuarioController extends Controller
         $usuario->telefone =        trim(strip_tags(filter_input(INPUT_POST, "telefone")));
         $usuario->celular =         trim(strip_tags(filter_input(INPUT_POST, "celular")));
         $usuario->email =           trim(strip_tags(filter_input(INPUT_POST, "email")));
-        
+
 
         Flash::setForm($usuario);
         if (UsuarioService::salvar($usuario, $this->campo, $this->tabela)) {
@@ -107,9 +107,18 @@ class UsuarioController extends Controller
     {
         if ($id_usuario > 1) {
             Service::excluir($this->tabela, $this->campo, $id_usuario);
-        }else{
-            Flash::setMsg("Este usuário não pode ser excluído",3);
+        } else {
+            Flash::setMsg("Este usuário não pode ser excluído", 3);
         }
         $this->redirect(URL_BASE . "usuario");
+    }
+
+    public function perfil()
+    {
+        //i($_SESSION);
+        $breadcrumb = new Breadcrumb();
+        $dados["breadcrumb"] = $breadcrumb->addBreadcrumb();
+        $dados["view"] = "Usuario/perfil";
+        $this->load("template", $dados);
     }
 }
